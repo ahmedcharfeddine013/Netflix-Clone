@@ -1,15 +1,17 @@
-import { AppProps } from 'next/app'
-import '../styles/globals.css'
+import { AppProps } from "next/app";
+import "../styles/globals.css";
 // import type { AppProps } from 'next/app'
-import Home from './index'
-
+import { AuthProvider } from "../hooks/useAuth";
+import { RecoilRoot } from "recoil";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Component {...pageProps} />
-    </>
-  )
+    <AuthProvider>
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
+    </AuthProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -4,9 +4,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FaBell } from "react-icons/fa";
+import useAuth from "../../../hooks/useAuth";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const {logout} = useAuth()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,13 +49,14 @@ const Navbar = () => {
         <FaSearch className="hidden sm:inline h-6 w-6" />
         <p className="hidden lg:inline">Kids</p>
         <FaBell className="h-6 w-6" />
-        <Link href="/account">
+        {/* <Link href="/account"> */}
           <img
+          onClick={logout}
             src="https://rb.gy/g1pwyx"
             alt=""
             className="cursor-pointer rounded"
           />
-        </Link>
+        {/* </Link> */}
       </div>
     </header>
   );
