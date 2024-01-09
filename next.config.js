@@ -1,10 +1,12 @@
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  /* config options here */
+};
 
 module.exports = {
-  nextConfig,
   reactStrictMode: true,
   images: {
-    domains: ["image.tmdb.org"],
+    domains: ["rb.gy", "image.tmdb.org"],
   },
 };
